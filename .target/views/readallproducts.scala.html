@@ -1,0 +1,12 @@
+@(products: List[models.Product])
+
+@index("Listing all products") {
+	
+	<ul><h3>Floggit Products:</h3></ul>
+	<br>
+	<ul>
+		@for(product <- products){
+			<li><a href="/read-one-product/@product.getId()"><h4>@product.getName()</h4></a></li>
+		}
+	</ul>
+}

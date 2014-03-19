@@ -1,0 +1,16 @@
+@(product: models.Product)
+
+@index("Product") {
+	<ul>
+	<br> <strong>ID:</strong> @product.getId()
+	<br> <strong>Name:</strong> @product.getName()
+	<br> <strong>Price:</strong> @product.getRRP()
+	<br> <strong>Description:</strong> @product.getDescription()
+	<br> <strong>Categories:</strong> @for(category <- product.getCategories){
+		 @category.toString()
+	}
+	
+	</ul><br>
+		<a class="button" href="/read-all-categories" id="back-button">
+ 		<i> BACK </i></a>
+}

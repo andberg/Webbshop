@@ -1,0 +1,11 @@
+@(categories: List[models.Category])
+
+@index("Listing all products") {
+	
+	<ul><h3>Categories</h3></ul><br>
+	<ul>
+		@for(category <- categories){
+			<li><a href="/read-category/@category.getId()"><h4>@category.getName</h4></a></li>
+		}
+	</ul>
+	}

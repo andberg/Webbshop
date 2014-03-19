@@ -1,0 +1,12 @@
+@(category: models.Category)
+
+@index("Category") {
+	<ul>
+	<br> <strong>ID:</strong> @category.getId()
+	<br> <strong>Name:</strong> @category.getName()
+	<br> <strong>Staff Responsible:</strong> @category.getStaffResponsibleFirstname() @category.getStaffResponsibleSurname()
+	</ul>
+	<br>
+	<a class="button" href="/read-all-categories" id="back-button">
+  <i> BACK </i></a>
+}
