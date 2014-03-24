@@ -1,15 +1,20 @@
 package models;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="users")
 public final class User {
 	@Id
 	private String email;
 	private String password;
 	private String firstname;
 	private String surname;
+	
+	@Column(name="street_address")
 	private String streetAddress;
 	private String postcode;
 	private String town;

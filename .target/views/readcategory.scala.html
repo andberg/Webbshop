@@ -4,7 +4,11 @@
 	<ul>
 	<br> <strong>ID:</strong> @category.getId()
 	<br> <strong>Name:</strong> @category.getName()
-	<br> <strong>Staff Responsible:</strong> @category.getStaffResponsibleFirstname() @category.getStaffResponsibleSurname()
+	<br> <strong>Staff Responsible:</strong> @category.getStaffResponsible()
+	<br>
+	<br><strong>Products in category:</strong><br>@for(product <- category.products) {
+				@product.getName()<br>
+				}
 	</ul>
 	<br>
 	<a class="button" href="/read-all-categories" id="back-button">

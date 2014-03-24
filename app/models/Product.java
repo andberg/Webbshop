@@ -5,9 +5,13 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="products")
 public final class Product {
 	@Id
 	@GeneratedValue
@@ -16,8 +20,13 @@ public final class Product {
 	private String description;
 	private double cost;
 	private double RRP;
+	
 	@ManyToMany
-	private List<Category> categories;
+	@JoinTable(name="products_in_categories",
+	joinColumns = @JoinColumn(name="product_id"),
+	inverseJoinColumns = @JoinColumn(name="category_id")
+	)
+	public List<Category> categories;
 	
 	public Product() {
 		

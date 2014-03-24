@@ -9,6 +9,8 @@ libraryDependencies ++= Seq(
   cache
 )     
 
-libraryDependencies += "org.hibernate" % "hibernate-entitymanager" % "4.3.+"
+libraryDependencies += "org.hibernate" % "hibernate-entitymanager" % "4.2.8.Final"
+
+libraryDependencies += "mysql" % "mysql-connector-java" % "+"
 
 play.Project.playJavaSettings

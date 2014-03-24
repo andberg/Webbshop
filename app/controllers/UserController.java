@@ -2,6 +2,7 @@ package controllers;
 
 import java.util.List;
 
+import models.User;
 import play.db.jpa.JPA;
 import play.db.jpa.Transactional;
 import play.mvc.Controller;
@@ -9,7 +10,7 @@ import play.mvc.Result;
 import views.html.readallusers;
 import views.html.readuser;
 
-public class User extends Controller {
+public class UserController extends Controller {
 
 	@Transactional
 	public static Result readUser(String username) {
@@ -23,7 +24,7 @@ public class User extends Controller {
 
 	@Transactional
 	public static Result readAllUsers() {
-		List<models.User> users = JPA.em().createQuery("SELECT a FROM User a", models.User.class).getResultList();
+		List<User> users = JPA.em().createQuery("SELECT c FROM User c", User.class).getResultList();
 		return ok(readallusers.render(users));
 	}
 

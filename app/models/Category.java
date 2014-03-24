@@ -1,34 +1,39 @@
 package models;
 
+import java.util.List;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="categories")
 public class Category {
 	@Id
 	@GeneratedValue
 	private int id; 
 	private String name; 
-	private String staffResponsibleFirstname; 
-	private String staffResponsibleSurname;
+	
+	@Column(name="staff_responsible")
+	private int staffResponsible; 
+	
+	@ManyToMany(mappedBy="categories") 
+	public List<models.Product> products;
 	
 	public Category() {
 			
 	}
 	
-	public Category(String name, String staffResponsibleFirstname, String staffResponsibleSurname){
+	public Category(String name, int staffResponsible){
 		this.setName(name); 
-		this.setStaffResponsibleFirstname(staffResponsibleFirstname); 
-		this.setStaffResponsibleSurname(staffResponsibleSurname); 
+		this.setStaffResponsible(staffResponsible);
 	}
 	
 	public int getId() {
 		return id;
-	}
-
-	public void setId(int id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -39,25 +44,17 @@ public class Category {
 		this.name = name;
 	}
 
-	public String getStaffResponsibleFirstname() {
-		return staffResponsibleFirstname;
+	public int getStaffResponsible() {
+		return staffResponsible; 
 	}
 
-	public void setStaffResponsibleFirstname(String staffResponsibleFirstname) {
-		this.staffResponsibleFirstname = staffResponsibleFirstname;
+	public void setStaffResponsible(int staffResponsible) {
+		this.staffResponsible = staffResponsible;
 	}
 
-	public String getStaffResponsibleSurname() {
-		return staffResponsibleSurname;
-	}
-
-	public void setStaffResponsibleSurname(String staffResponsibleSurname) {
-		this.staffResponsibleSurname = staffResponsibleSurname;
-	}
-	
 	@Override
 	public String toString(){
-		return this.getName(); 
+		return getName(); 
 	}
 
 }

@@ -4,15 +4,17 @@
 
 # Home page
 GET     /                           	controllers.Startpage.index()
-GET 	/populate-db					controllers.PopulateDatabase.populateDatabase()
+GET 	/create-product-form			controllers.ProductController.createProduct()
+POST 	/create-product					controllers.ProductController.createProduct()
 
 # Products
-GET 	/read-one-product/:id			controllers.Product.readOneProduct(id: Int)
-GET 	/read-all-products				controllers.Product.readAllProducts()
+GET 	/read-one-product/:id			controllers.ProductController.readOneProduct(id: Int)
+GET 	/read-all-products				controllers.ProductController.readAllProducts()
+#POST 	/create-product					controllers.Product.createProduct()
 
 # Users
-GET 	/read-user/:username			controllers.User.readUser(username)
-GET 	/read-all-users					controllers.User.readAllUsers()
+GET 	/read-user/:username			controllers.UserController.readUser(username)
+GET 	/read-all-users					controllers.UserController.readAllUsers()
 #GET 	/users/login/:username/:password	controllers.User.login(username, password)
 
 
@@ -22,8 +24,8 @@ GET 	/read-all-users					controllers.User.readAllUsers()
 #GET 	/cart/delete/:username				controllers.Cart.deleteCart(username)
 
 
-GET 	/read-all-categories			controllers.Category.readAllCategories()
-GET 	/read-category/:category		controllers.Category.readCategory(category: Int)
+GET 	/read-all-categories			controllers.CategoryController.readAllCategories()
+GET 	/read-category/:category		controllers.CategoryController.readCategory(category: Int)
 
 
 # Map static resources from the /public folder to the /assets URL path
