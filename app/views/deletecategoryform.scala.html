@@ -1,0 +1,16 @@
+@(categories: List[Category])
+
+@index("Delete Category"){
+<form action="/delete-category" method="post" role="form">
+  <div class="form-group">
+  <div class="form-group">
+  <label for="categories">Which Categories do you want to delete?</label>
+    <div class="checkbox">
+      @for(category <- categories) {
+      	<div class="checkbox">
+    	  <input type="checkbox" name="categories" value="@category.getId"> @category.getName 
+    	   </div>
+   		}
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+}

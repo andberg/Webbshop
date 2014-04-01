@@ -1,0 +1,28 @@
+@()
+
+@index("User") {
+	@if(flash.containsKey("email-empty")){
+	<div class="alert alert-warning">Email required.</div>
+}
+ 
+@if(flash.containsKey("password-empty")){
+	<div class="alert alert-warning">Password required.</div>
+}
+ 
+@if(flash.containsKey("no-username-password-match")){
+	<div class="alert alert-warning">Email or password incorrect. </div>
+}
+ 
+<h3>User login:</h3>
+<form action="@routes.UserController.loginUserValidate()" method="post" role="form">
+  <div class="form-group">
+    <label for="user-email">Email</label>
+    <input type="text" class="form-control" id="user-email" name="email" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="user-password">Password</label>
+    <input type="text" class="form-control" id="user-password" name="password" placeholder="Enter password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+}

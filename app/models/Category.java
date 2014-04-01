@@ -10,28 +10,34 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="categories")
+@Table(name = "categories")
 public class Category {
 	@Id
 	@GeneratedValue
-	private int id; 
-	private String name; 
-	
-	@Column(name="staff_responsible")
-	private int staffResponsible; 
-	
-	@ManyToMany(mappedBy="categories") 
-	public List<models.Product> products;
-	
+	private int id;
+	private String name;
+
+	@Column(name = "staff_responsible")
+	private int staffResponsible;
+
+	@ManyToMany(mappedBy = "categories")
+	public List<Product> products;
+
 	public Category() {
-			
+
 	}
-	
-	public Category(String name, int staffResponsible){
-		this.setName(name); 
+
+	public Category(String name, int staffResponsible) {
+		this.setName(name);
 		this.setStaffResponsible(staffResponsible);
 	}
-	
+
+	public Category(String name, int staffResponsible, List<Product> products) {
+		this.name = name;
+		this.staffResponsible = staffResponsible;
+		this.products = products;
+	}
+
 	public int getId() {
 		return id;
 	}
@@ -45,7 +51,7 @@ public class Category {
 	}
 
 	public int getStaffResponsible() {
-		return staffResponsible; 
+		return staffResponsible;
 	}
 
 	public void setStaffResponsible(int staffResponsible) {
@@ -53,8 +59,8 @@ public class Category {
 	}
 
 	@Override
-	public String toString(){
-		return getName(); 
+	public String toString() {
+		return getName();
 	}
 
 }

@@ -1,0 +1,16 @@
+@(products: List[Product])
+
+@index("Delete Product"){
+<form action="/delete-product" method="post" role="form">
+  <div class="form-group">
+  <div class="form-group">
+  <label for="product-categories">Which Products do you want to delete?</label>
+    <div class="checkbox">
+      @for(product <- products) {
+      	<div class="checkbox">
+    	  <input type="checkbox" name="products" value="@product.getId"> @product.getName 
+    	   </div>
+   		}
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+}
