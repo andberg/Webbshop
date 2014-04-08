@@ -5,6 +5,7 @@
 # Home page
 GET     /                           	controllers.Startpage.index()
 
+<<<<<<< HEAD
 
 # Admin
 GET 	/admins							controllers.AdminController.index()
@@ -45,6 +46,49 @@ POST 	/carts/add-product				controllers.OrderAndCartController.addProductToCart(
 POST 	/carts/place-order				controllers.OrderAndCartController.placeOrder()
 GET 	/orders							controllers.OrderAndCartController.viewOrders()
 GET 	/orders/view-all-orders			controllers.OrderAndCartController.viewAllOrders()
+=======
+# Products
+GET 	/read-one-product/:id			controllers.ProductController.readOneProduct(id: Int)
+GET 	/read-all-products				controllers.ProductController.readAllProducts()
+
+# Admin
+GET 	/admin							controllers.AdminController.index()
+GET 	/login-admin					controllers.AdminController.loginAdmin()
+POST 	/login-admin					controllers.AdminController.loginAdminValidate()
+GET 	/logout-admin					controllers.AdminController.logoutAdmin()
+GET 	/admin-read-user/:username		controllers.UserController.adminReadUser(username)
+
+GET 	/create-product					controllers.ProductController.createProductForm()
+POST 	/create-product					controllers.ProductController.createProduct()
+GET 	/delete-product					controllers.ProductController.deleteProductForm()
+POST 	/delete-product					controllers.ProductController.deleteProduct()
+
+GET 	/create-category				controllers.CategoryController.createCategoryForm()
+POST 	/create-category				controllers.CategoryController.createCategory()
+GET 	/delete-category				controllers.CategoryController.deleteCategoryForm()
+POST 	/delete-category				controllers.CategoryController.deleteCategory()
+
+# Users
+GET 	/read-user/:username			controllers.UserController.readUser(username)
+GET 	/read-all-users					controllers.UserController.readAllUsers()
+GET 	/create-user					controllers.UserController.createUserForm()
+POST 	/create-user					controllers.UserController.createUser()
+GET     /login-user						controllers.UserController.loginUser()
+GET     /logout-user					controllers.UserController.logoutUser()
+POST    /login-user						controllers.UserController.loginUserValidate()
+
+# Orders and Cart
+GET 	/view-cart						controllers.OrderAndCartController.viewCart()
+POST 	/view-cart						controllers.OrderAndCartController.deleteFromCart()
+POST 	/view-product					controllers.OrderAndCartController.addProductToCart()
+POST 	/place-order					controllers.OrderAndCartController.placeOrder()
+GET 	/view-orders					controllers.OrderAndCartController.viewOrders()
+GET 	/view-all-orders				controllers.OrderAndCartController.viewAllOrders()
+
+# Categories
+GET 	/read-all-categories			controllers.CategoryController.readAllCategories()
+GET 	/read-category/:category		controllers.CategoryController.readCategory(category: Int)
+>>>>>>> 8a94a9447040fa6e3179d30f57263be07e40b3ec
 
 
 # Map static resources from the /public folder to the /assets URL path

@@ -2,11 +2,19 @@
 <div class="page-header">
   <h1>Webbshop @if(session().containsKey("username")){
 	 <img href="/" alt="staff" src="../assets/images/barf_zombie_animated.gif">
+<<<<<<< HEAD
 	 <div class="who-is-logged-in" href="/admins" >You are logged in as: @session().get("username")</div>
 }
 @if(session().containsKey("user")){
 	 <img href="/" alt="staff" src="../assets/images/zombie3.gif">
 	 <div class="who-is-logged-in">You are logged in as: <a href="/users/@session.get("user")">@session().get("user")</a></div>
+=======
+	 <div class="who-is-logged-in" href="/admin" >You are logged in as: @session().get("username")</div>
+}
+@if(session().containsKey("user")){
+	 <img href="/" alt="staff" src="../assets/images/zombie3.gif">
+	 <div class="who-is-logged-in">You are logged in as: <a href="/read-user/@session.get("user")">@session().get("user")</a></div>
+>>>>>>> 8a94a9447040fa6e3179d30f57263be07e40b3ec
 }</h1>
 </div>
 
@@ -27,12 +35,21 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
           <ul class="dropdown-menu">
+<<<<<<< HEAD
             <li><a href="/users/create">Create User</a></li>
             <li><a href="/users/login">Login</a></li>
             <li><a href="/users/logout">Logout</a></li>
             @if(session().containsKey("user")){
             	<li><a href="/carts">Your cart</a></li>
             	<li><a href="/orders">Your orders</a></li>
+=======
+            <li><a href="/create-user">Create User</a></li>
+            <li><a href="/login-user">Login</a></li>
+            <li><a href="/logout-user">Logout</a></li>
+            @if(session().containsKey("user")){
+            	<li><a href="/view-cart">Your cart</a></li>
+            	<li><a href="/view-orders">Your orders</a></li>
+>>>>>>> 8a94a9447040fa6e3179d30f57263be07e40b3ec
             }
           </ul>
         </li>
@@ -52,6 +69,19 @@
             <li><a href="/admins/read-users/">View all Users</a></li>
           </ul>
         </li>
+<<<<<<< HEAD
+=======
+        <li class="dropdown">
+          <a href="/admin" class="dropdown-toggle" data-toggle="dropdown">ADMIN
+          <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/login-admin">Login</a></li>
+            <li><a href="/logout-admin">Logout</a></li>
+            <li><a href="/admin">Admin-page</a></li>
+            <li><a href="/read-all-users">View all Users</a></li>
+          </ul>
+        </li>
+>>>>>>> 8a94a9447040fa6e3179d30f57263be07e40b3ec
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>

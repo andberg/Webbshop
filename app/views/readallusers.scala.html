@@ -5,7 +5,11 @@
 	<ul><h3>Floggits Users:</h3></ul> <br>
 	<ul>
 		@for(user <- users){
+<<<<<<< HEAD
 			<li><a href="/users/@user.getEmail()"><h4>@user.getFirstname() @user.getSurname()</h4></a></li>
+=======
+			<li><a href="/admin-read-user/@user.getEmail()"><h4>@user.getFirstname() @user.getSurname()</h4></a></li>
+>>>>>>> 8a94a9447040fa6e3179d30f57263be07e40b3ec
 		}
 	</ul>
 }
