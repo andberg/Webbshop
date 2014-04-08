@@ -1,0 +1,13 @@
+@(orders: List[models.Order])
+@index("View all products") {
+	
+	<ul><h3>Orders</h3></ul><br>
+	<ul>
+		@for(order <- orders){
+		Order id: @order.getOrderId <br>
+		Product id: @order.getProductId <br>
+		Quantity: @order.getQuantity <br>
+		<br>	
+		}
+	</ul>
+	}

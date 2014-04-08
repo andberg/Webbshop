@@ -1,0 +1,26 @@
+@(usersCarts: List[models.Cart])(user: User)
+
+@index("Cart for user") {
+	
+	<ul><h3>User: @user.getEmail</h3></ul>
+	<br>
+	@if(flash.containsKey("deleted")){
+	<div class="alert alert-warning">Cart updated. </div>
+}
+	<ul>
+		@for(cart <- usersCarts){
+		@cart.toString
+		<form action="@routes.OrderAndCartController.deleteFromCart()" method="post" role="form">
+		<button type="submit" class="button" name="cartId" value="@cart.getId">Delete</button>
+ 		</form>
+ 		<br>
+ 		<br>
+		}
+	<br>
+	<br>
+	<br>
+	<form action="@routes.OrderAndCartController.placeOrder()" method="post" role="form">
+		<button type="submit" class="button" name="user-id" value="@user.getId">Place Order</button>
+ 		</form>
+	</ul>
+}

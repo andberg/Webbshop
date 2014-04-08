@@ -1,0 +1,29 @@
+@(staff: List[Staff])(products: List[Product])
+
+@index("Create Category"){
+<form action="/categories/create" method="post" role="form">
+  <div class="form-group">
+  <div class="form-group">
+    <label for="category-name">Category Name</label>
+    <input type="text" class="form-control" id="category-name" name="name" placeholder="Enter categoryname">
+  </div>
+  <label for="staff-responsible">Staff Responsible - choose one</label>
+   	@for(staff <- staff) {
+   	<div class="radio">
+  		<label>
+   		 <input type="radio" name="staff" id="staff" value="@staff.getId" checked>
+   		 @staff.getFirstname @staff.getSurname 
+ 		 </label>
+	</div>
+	}
+   	<label for="categories-products">Which product shall be included in the category? </label>
+   	 <div class="checkbox">
+      @for(product <- products) {
+      	<div class="checkbox">
+    	  <input type="checkbox" name="products" value="@product.getId"> @product.getName
+    	   </div>
+   		}
+   	</div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+}

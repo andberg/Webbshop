@@ -2,14 +2,10 @@
 
 @index("User") {
 	<ul>
-	<br> <strong>Email:</strong> @user.getEmail()
-	<br> <strong>Firstname:</strong> @user.getFirstname()
-	<br> <strong>Surname:</strong> @user.getSurname()
-	<br> <strong>Streetaddress:</strong> @user.getStreetAddress()
-	<br> <strong>Postcode:</strong> @user.getPostcode()
-	<br> <strong>City:</strong> @user.getTown()
-	<br> <strong>Phonenumber:</strong> @user.getPhonenumber()
+	<h3>Address: </h3>
+	<ul>
+	@user.getFirstname @user.getSurname <br>
+	@user.getStreetAddress <br>
+	@user.getPostcode @user.getTown <br>
 	</ul><br>
-	<a class="button" href="/read-all-categories" id="back-button">
-  <i> BACK </i></a>
 }

@@ -1,0 +1,66 @@
+@()
+@index("Create User"){
+@if(flash.containsKey("email-empty")){
+	<div class="alert alert-warning">Email required.</div>
+}
+@if(flash.containsKey("password-empty")){
+	<div class="alert alert-warning">Password required.</div>
+}
+@if(flash.containsKey("firtname-empty")){
+	<div class="alert alert-warning">Firstname required. </div>
+}
+@if(flash.containsKey("surname-empty")){
+	<div class="alert alert-warning">Surname required. </div>
+}
+@if(flash.containsKey("street-address-empty")){
+	<div class="alert alert-warning">Street Address required. </div>
+}
+@if(flash.containsKey("postcode-empty")){
+	<div class="alert alert-warning">Postcode required. </div>
+}
+@if(flash.containsKey("town-empty")){
+	<div class="alert alert-warning">Town required. </div>
+}
+@if(flash.containsKey("phonenumber-empty")){
+	<div class="alert alert-warning">Phonenumber required. </div>
+}
+
+<form action="/users/create" method="post" role="form">
+  <div class="form-group">
+  <div class="form-group">
+    <label for="user-email">Email</label>
+    <input type="text" class="form-control" id="user-email" name="email" placeholder="Enter email">
+  </div>
+    <div class="form-group">
+   <label for="user-password">Password</label>
+    <input type="text" class="form-control" id="user-password" name="password" placeholder="Enter password">
+  </div>
+    <div class="form-group">
+   <label for="user-firstname">Firstname</label>
+    <input type="text" class="form-control" id="user-firstname" name="firstname" placeholder="Enter firstname">
+  </div>
+    <div class="form-group">
+   		 <label for="user-surname">Surname</label>
+    <input type="text" class="form-control" id="user-surname" name="surname" placeholder="Enter surname">
+  </div>
+    <div class="form-group">
+   <label for="user-street-address">Street address</label>
+    <input type="text" class="form-control" id="user-street-address" name="streetaddress" placeholder="Enter street address">
+  </div>
+    <div class="form-group">
+   <label for="user-postcode">Postcode</label>
+    <input type="text" class="form-control" id="user-postcode" name="postcode" placeholder="Enter postcode">
+  </div>
+    <div class="form-group">
+   <label for="user-town">Town</label>
+    <input type="text" class="form-control" id="user-town" name="town" placeholder="Enter town">
+  </div>
+    <div class="form-group">
+   <label for="user-phonenumber">Phonenumber</label>
+    <input type="text" class="form-control" id="user-phonenumber" name="phonenumber" placeholder="Enter phonenumber">
+  </div>
+    <div class="form-group">
+  <button type="submit" class="btn btn-default">Submit</button>
+  </div>
+</form>
+}

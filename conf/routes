@@ -4,28 +4,47 @@
 
 # Home page
 GET     /                           	controllers.Startpage.index()
-GET 	/create-product-form			controllers.ProductController.createProduct()
-POST 	/create-product					controllers.ProductController.createProduct()
+
+
+# Admin
+GET 	/admins							controllers.AdminController.index()
+GET 	/admins/login					controllers.AdminController.loginAdmin()
+POST 	/admins/login					controllers.AdminController.loginAdminValidate()
+GET 	/admins/logout					controllers.AdminController.logoutAdmin()
+GET 	/admins/read-user/:username		controllers.UserController.adminReadUser(username)
 
 # Products
-GET 	/read-one-product/:id			controllers.ProductController.readOneProduct(id: Int)
-GET 	/read-all-products				controllers.ProductController.readAllProducts()
-#POST 	/create-product					controllers.Product.createProduct()
+GET 	/products/create				controllers.ProductController.createProductForm()
+GET 	/products						controllers.ProductController.readAllProducts()
+POST 	/products/create				controllers.ProductController.createProduct()
+GET 	/products/delete				controllers.ProductController.deleteProductForm()
+POST 	/products/delete				controllers.ProductController.deleteProduct()
+GET 	/products/:id					controllers.ProductController.readOneProduct(id: Int)
+
+# Categories
+GET 	/categories						controllers.CategoryController.readAllCategories()
+GET 	/categories/create				controllers.CategoryController.createCategoryForm()
+POST 	/categories/create				controllers.CategoryController.createCategory()
+GET 	/categories/delete				controllers.CategoryController.deleteCategoryForm()
+POST 	/categories/delete				controllers.CategoryController.deleteCategory()
+GET 	/categories/:category			controllers.CategoryController.readCategory(category: Int)
 
 # Users
-GET 	/read-user/:username			controllers.UserController.readUser(username)
-GET 	/read-all-users					controllers.UserController.readAllUsers()
-#GET 	/users/login/:username/:password	controllers.User.login(username, password)
+GET 	/users							controllers.UserController.readAllUsers()
+GET 	/users/create					controllers.UserController.createUserForm()
+POST 	/users/create					controllers.UserController.createUser()
+GET     /users/login					controllers.UserController.loginUser()
+POST    /users/login					controllers.UserController.loginUserValidate()
+GET     /users/logout					controllers.UserController.logoutUser()
+GET 	/users/:username				controllers.UserController.readUser(username)
 
-
-#GET 	/cart								controllers.Cart.index()
-#GET 	/cart/read/:username				controllers.Cart.readCart(username)
-#GET 	/cart/update/:username				controllers.Cart.updateCart(username)
-#GET 	/cart/delete/:username				controllers.Cart.deleteCart(username)
-
-
-GET 	/read-all-categories			controllers.CategoryController.readAllCategories()
-GET 	/read-category/:category		controllers.CategoryController.readCategory(category: Int)
+# Orders and Cart
+GET 	/carts							controllers.OrderAndCartController.viewCart()
+POST 	/carts							controllers.OrderAndCartController.deleteFromCart()
+POST 	/carts/add-product				controllers.OrderAndCartController.addProductToCart()
+POST 	/carts/place-order				controllers.OrderAndCartController.placeOrder()
+GET 	/orders							controllers.OrderAndCartController.viewOrders()
+GET 	/orders/view-all-orders			controllers.OrderAndCartController.viewAllOrders()
 
 
 # Map static resources from the /public folder to the /assets URL path

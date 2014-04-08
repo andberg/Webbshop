@@ -1,0 +1,15 @@
+@(message: String)
+
+@index("Admin") {
+	<ul>
+	@message
+	
+	<h3>Admin Panel</h3>
+	<li><a href="/products/create">Create Product</a></li>
+	<li><a href="/products/delete">Delete Product</a></li>
+	<li><a href="/categories/create">Create Category</a></li>
+	<li><a href="/categories/delete">Delete Category</a></li>
+	<li><a href="/users">View all Users</a></li>
+	<li><a href="/orders/view-all-orders">View all Orders</a></li>
+	</ul>
+}

@@ -6,7 +6,7 @@
 	<br>
 	<ul>
 		@for(product <- products){
-			<li><a href="/read-one-product/@product.getId()"><h4>@product.getName()</h4></a></li>
+			<li><a href="/products/@product.getId()"><h4>@product.getName()</h4></a></li>
 		}
 	</ul>
 }

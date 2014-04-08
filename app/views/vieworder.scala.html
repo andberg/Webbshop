@@ -1,0 +1,23 @@
+@(user: User)(orders: List[models.Order])
+
+@index("Orders for User") {
+	
+	<ul><h3>User: @user.getEmail</h3></ul>
+	<br>
+	@if(flash.containsKey("order-send")){
+		<div class="alert alert-warning">Order was sent to:
+		<br> @user.getFirstname @user.getSurname
+		<br> @user.getStreetAddress
+		<br> @user.getPostcode @user.getTown
+		</div>
+	}
+	<ul>
+	<h3>This Order: </h3>
+	@for(order <- orders){
+		Order id: @order.getOrderId <br>
+		Product id: @order.getProductId <br>
+		Quantity: @order.getQuantity <br>
+		<br>
+	}
+	</ul>
+}

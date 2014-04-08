@@ -1,0 +1,16 @@
+@(user: User)
+
+@index("Welcome") {
+	@if(flash.containsKey("already-logged-in")){
+	<div class="alert alert-warning">You are already logged in as @user.getEmail.</div>
+	}
+	@if(flash.containsKey("no-username-password-match")){
+	<div class="alert alert-warning">Username or password incorrect. </div>
+	}
+	<h3>Address: </h3>
+	<ul>
+	@user.getFirstname @user.getSurname <br>
+	@user.getStreetAddress <br>
+	@user.getPostcode @user.getTown <br>
+	</ul><br>
+}
