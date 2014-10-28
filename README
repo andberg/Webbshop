@@ -1,4 +1,4 @@
-This is your new Play application
-=====================================
+This was my first Play-Application. 
+The idea for this project was to make a web-client for the ADI-floggit webbshop with basic functionalities for purchase a product and login as an admin to handle orders etc. 
 
-This file will be packaged with your application, when using `play dist`.
+It might not be the most stylish application, but have the functionality it needed. 
